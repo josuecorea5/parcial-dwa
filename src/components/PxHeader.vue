@@ -4,12 +4,16 @@
       <nav
         class="navbar navbar-light background-nav flex justify-content-space-bettween  mb-5 "
       >
-        <h1 class="navbar-brand text-white text-left" href="#">
+        <router-link
+          class="navbar-brand text-white text-left"
+          :to="{ name: 'px-header' }"
+        >
           Prestamás
-        </h1>
-        <ul class="list">
-          <li><a href="/" class="font-weight-bold">Lista de Prestamos</a></li>
-        </ul>
+        </router-link>
+        <router-link class="font-weight-bold " :to="{ name: 'px-details' }">
+          Lista de Prestamos
+        </router-link>
+
         <img class="text-left" src="../assets/money.png" alt="Money" />
       </nav>
     </main>

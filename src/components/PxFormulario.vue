@@ -1,13 +1,14 @@
 <template>
   <div class="container">
     <form action="" class="container__form">
-      <input class="input" type="text" placeholder="Nombre" />
-      <input class="input" type="text" placeholder="Apellido" />
-      <input class="input" type="number" placeholder="DUI" />
+      <input class="input" type="text" placeholder="Nombre" name="nombre" />
+      <input class="input" type="text" placeholder="Apellido" name="apellido" />
+      <input class="input" type="number" placeholder="DUI" name="dui" />
       <input
         class="input"
         type="number"
         step="any"
+        name="montoPrestado"
         placeholder="Monto Prestado"
       />
       <input
@@ -15,6 +16,7 @@
         type="number"
         min="1"
         max="100"
+        name="porcentaje"
         id="myPercent"
         placeholder="Porcentaje de intereses"
       />
@@ -28,7 +30,7 @@
       <input
         class="input"
         type="number"
-        name=""
+        name="plazo"
         id=""
         placeholder="Plazo por mes"
       />

@@ -1,19 +1,13 @@
 <template>
   <main>
-    <px-header></px-header>
-    <px-details></px-details>
+    <router-view class="list" />
   </main>
 </template>
 
+<style scoped></style>
 <script>
-import PxHeader from "@/components/PxHeader";
-import PxDetails from "@/views/PxDetails";
 export default {
   name: "App",
-  components: {
-    PxHeader,
-    PxDetails,
-  },
 };
 </script>
 

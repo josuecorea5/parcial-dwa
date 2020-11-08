@@ -1,5 +1,18 @@
 <template>
   <div>
+    <main>
+      <nav
+        class="navbar navbar-light background-nav flex justify-content-center  mb-5 "
+      >
+        <router-link
+          class="navbar-brand text-white text-left "
+          :to="{ name: 'px-header' }"
+        >
+          Prestamás
+        </router-link>
+      </nav>
+    </main>
+    <h3 class="text-center ">Lista de Prestamos</h3>
     <form
       class="form-inline my-2 my-lg-6 mb-5 mt-5 flex justify-content-center "
     >
@@ -11,7 +24,7 @@
         v-model="search"
       />
     </form>
-    <table class="table">
+    <table class="table table-bordered w-75 m-auto">
       <thead>
         <tr>
           <th v-for="(head, DUI) in headers" :key="DUI" scope="col">
@@ -28,9 +41,20 @@
   </div>
 </template>
 
+<style scoped>
+.background-nav {
+  background: rgb(178, 10, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(178, 10, 255, 1) 15%,
+    rgba(71, 24, 143, 1) 89%
+  );
+}
+</style>
 <script>
 export default {
   name: "PxDetails",
+
   data() {
     return {
       search: "",
@@ -62,22 +86,14 @@ export default {
           Fecha: "2020/01/12",
           Abono: "100",
         },
-        {
-          nombre: "Valentina",
-          apellido: "Gonzales",
-          DUI: "009826230",
-          Monto: "50000",
-          Interes: "2%",
-          Fecha: "2020/04/12",
-          Abono: "1000",
-        },
       ],
     };
   },
   computed: {
     filterPrestamo() {
       return this.prestamos.filter((prest) => {
-        return prest.nombre.toLowerCase().includes(this.search.toLowerCase());
+        return prest.nombre.toLowerCase().match(this.search.toLowerCase());
+        // return prest.nombre.toLowerCase().includes(this.search.toLowerCase());
       });
     },
   },
